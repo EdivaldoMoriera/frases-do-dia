@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -24,14 +26,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -40,12 +34,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  int _numeroAleatorio = 0;
+  List _frases=[
+   'frase1', 'frase2', 'frase3', 'frase4'
+  ];
 
   void _incrementCounter() {
     setState(() {
-
-      _counter++;
+      _numeroAleatorio = new Random().nextInt(4);
     });
   }
 
@@ -60,14 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
 
         child: Column(
-          
+
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Precione o botão para gerar uma frses:',
+              'Precione o botão para gerar uma frases:',
             ),
             Text(
-              '$_counter',
+              _frases[1],
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
