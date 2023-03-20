@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'Precione o botão para gerar uma frases:',
             ),
             Text(
-              _frases[1],
+              _frases[_numeroAleatorio],
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
